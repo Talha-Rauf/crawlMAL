@@ -1,0 +1,11 @@
+def save_anime_data(a_data):
+    fw = open(f'{a_data[0]}', 'w')
+    fw.write('Name: ' + a_data[0] + '\n')
+    fw.write('Rating: ' + a_data[1] + '\n')
+    fw.write('Studio(s): ' + a_data[2] + '\n')
+    fw.write('Genre(s): ' + a_data[3] + '\n')
+    fw.write('Synopsis: ' + a_data[4] + '\n')
+    fw.write('Name of Reviewer: ' + a_data[5] + '\n')
+    fw.write(a_data[6].replace('\n', '') + '\n')
+    fw.write('User\'s Review: ' + a_data[7])
+    fw.close()
