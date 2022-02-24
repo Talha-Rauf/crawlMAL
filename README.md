@@ -1,4 +1,6 @@
 # crawlMAL
+To use this program simply run it on any compiler like VS code or Pycharm and I hope you enjoy it!
+
 This web crawler:
 1- Searches the MAL (a.k.a. My Anime List) website based on the input anime name.
 2- Shows up to the first five results and provides the option to pick one from them.
