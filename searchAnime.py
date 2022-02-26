@@ -7,7 +7,7 @@ def search_anime(a_name):
     a_url = f'https://myanimelist.net/search/all?q={a_name}&cat=all'
     anime_code = requests.get(a_url)
     plain_text = anime_code.text  # Converts all the source code into simple text
-    soup = BeautifulSoup(plain_text, 'lxml')  # Converts to BeautifulSoup Object
+    soup = BeautifulSoup(plain_text)  # Converts to BeautifulSoup Object
     count = 1
     anime_dict = {}
 

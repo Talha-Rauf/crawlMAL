@@ -5,16 +5,14 @@ from bs4 import BeautifulSoup
 def get_single_anime_data(item_url):
     source_code = requests.get(item_url)
     plain_text = source_code.text  # Converts all the website code into simple text
-    soup = BeautifulSoup(plain_text, 'lxml')
+    soup = BeautifulSoup(plain_text)
     anime_genre = ''
     anime_studio = ''
 
-    for title_name in soup.find_all('h1', {'class': 'title-name'}):
-        anime_name = title_name.get_text()
+    anime_name = soup.find('h1', {'class': 'title-name'}).get_text()
 
     print(anime_name)
-    for title_rating in soup.find_all('div', {'class': 'score-label'}):
-        anime_rating = title_rating.get_text()
+    anime_rating = soup.find('div', {'class': 'score-label'}).get_text()
 
     print(anime_rating)
     for spaceit_pad in soup.find('div', {'class': 'leftside'}).find_all('div', {'class': 'spaceit_pad'}):
